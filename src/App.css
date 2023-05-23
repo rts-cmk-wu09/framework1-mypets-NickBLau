@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,900&display=swap");
 @import "normalize.css";
+
 #root {
+  box-sizing: border-box;
+  margin: 0;
   max-width: 375px;
   height: 812px;
   text-align: center;
@@ -52,4 +55,30 @@ p {
 
 .margin-right {
   margin-right: 20px;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.align-start {
+  align-self: start;
+}
+
+.reset {
+  margin: 0;
+  padding: 0;
+}
+
+.text-align-start {
+  text-align: left;
+}
+
+.outline {
+  background-color: #5533ea;
+  outline: 5px solid orange;
 }
