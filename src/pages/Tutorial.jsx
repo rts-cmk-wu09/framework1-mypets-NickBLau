@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import PetsIcon from "../assets/MyPetsIcon.svg";
+import Animal from "../assets/Animal.png";
 import styled from "styled-components";
 import Heading from "../components/Heading";
 import Oval from "../assets/Oval.svg";
@@ -22,7 +22,7 @@ const StyledButton = styled.button`
 const Tutorial = () => {
   return (
     <>
-      <img src={PetsIcon} alt="  " />
+      <img src={Animal} alt="  " />
       <Heading title={"My Pets"} size="20" weight="900" as="h1" />
       <StyledP>
         Taking care of a pet is my favorite, it helps me to gamir stress and
