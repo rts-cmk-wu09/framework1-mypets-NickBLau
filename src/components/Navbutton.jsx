@@ -9,8 +9,8 @@ const StyledButton = styled.button`
   box-shadow: 17px 17px 43px #868686, -17px -17px 43px #ffffff;
 `;
 
-const NavButton = () => {
-  return <StyledButton></StyledButton>;
+const NavButton = (props) => {
+  return <StyledButton>{props.prop}</StyledButton>;
 };
 
 export default NavButton;
