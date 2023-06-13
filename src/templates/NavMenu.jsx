@@ -1,6 +1,29 @@
 import styled from "styled-components";
-import NavButton from "../components/Navbutton";
+// import NavButton from "../components/Navbutton";
 import Profilepic from "../assets/Profilepic.png";
+import { BsHouseDoor } from "react-icons/Bs";
+import { BsChat } from "react-icons/Bs";
+import { BsPerson } from "react-icons/Bs";
+import { AiOutlineHeart } from "react-icons/Ai";
+
+const StyledBsHouseDoor = styled(BsHouseDoor)`
+  color: #57419d;
+`;
+const StyledButton = styled.button`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #e0e0e0;
+  box-shadow: 17px 17px 43px #868686, -17px -17px 43px #ffffff;
+`;
+
+const StyledImg = styled.img`
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+`;
+
 const StyledNav = styled.nav`
   position: fixed;
   left: 0;
@@ -18,15 +41,20 @@ const StyledNav = styled.nav`
 const navMenu = () => {
   return (
     <StyledNav className="Flex Center">
-      <NavButton>
-        <img src={Profilepic} alt="" srcset="" />
-      </NavButton>
-      <NavButton></NavButton>
-      <NavButton></NavButton>
-      <NavButton></NavButton>
+      <StyledButton>
+        <StyledBsHouseDoor />
+      </StyledButton>
+      <StyledButton>
+        <BsChat />
+      </StyledButton>
+      <StyledButton>
+        <AiOutlineHeart />
+      </StyledButton>
+      <StyledButton>
+        <BsPerson />
+      </StyledButton>
     </StyledNav>
   );
 };
 
 export default navMenu;
-<nav></nav>;
