@@ -16,10 +16,10 @@ const StyledImg = styled.img`
 `;
 
 const StyledProfilCircle = styled.div`
-  height: 42px;
-  width: 44px;
+  height: 43px;
+  width: 45px;
   border-radius: 20px;
-  background-color: aqua;
+  background-color: #f5f5fa;
 `;
 
 const StyledNav = styled.nav`
@@ -60,12 +60,9 @@ const ListView = () => {
         <FilterButton title={"Birds"}></FilterButton>
         <FilterButton title={"Other"}></FilterButton>
       </StyledNav>
+      <Link to="/detailsview"></Link>
+      <AnimalCard></AnimalCard>
 
-      <AnimalCard></AnimalCard>
-      <AnimalCard></AnimalCard>
-      <AnimalCard></AnimalCard>
-      <AnimalCard></AnimalCard>
-      <AnimalCard></AnimalCard>
       <br />
       <br />
       <br />
