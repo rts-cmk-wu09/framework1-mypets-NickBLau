@@ -35,7 +35,7 @@ const Tutorial = () => {
         <img src={Rectangle} alt="  " />
       </div>
 
-      <Link to="/details">
+      <Link to="/List">
         <StyledButton>Skip</StyledButton>
       </Link>
     </>
