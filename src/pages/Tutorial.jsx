@@ -1,3 +1,6 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+
 import { Link } from "react-router-dom";
 import Animal from "../assets/Animal.png";
 import styled from "styled-components";
@@ -22,22 +25,89 @@ const StyledButton = styled.button`
 const Tutorial = () => {
   return (
     <>
-      <img src={Animal} alt="  " />
-      <Heading title={"My Pets"} size="20" weight="900" as="h1" />
-      <StyledP>
-        Taking care of a pet is my favorite, it helps me to gamir stress and
-        fatiuge
-      </StyledP>
-
-      <div className="Flex Center margin-bottom">
-        <img className="Oval" src={Oval} alt="  " />
-        <img className="Oval" src={Oval} alt="  " />
-        <img src={Rectangle} alt="  " />
-      </div>
-
-      <Link to="/List">
-        <StyledButton>Skip</StyledButton>
-      </Link>
+      <Swiper
+        spaceBetween={50}
+        slidesPerView={1}
+        onSlideChange={() => ""}
+        onSwiper={(swiper) => ""}
+      >
+        <SwiperSlide>
+          {" "}
+          <img src={Animal} alt="  " />
+          <Heading title={"My Pets"} size="20" weight="900" as="h1" />
+          <StyledP>
+            Taking care of a pet is my favorite, it helps me to gamir stress and
+            fatiuge
+          </StyledP>
+          <StyledP>1/4 </StyledP>
+          <div className="Flex Center margin-bottom">
+            <img src={Rectangle} alt="  " />
+            <img className="Oval" src={Oval} alt="  " />
+            <img className="Oval" src={Oval} alt="  " />
+            <img className="Oval" src={Oval} alt="  " />
+          </div>
+          <Link to="/List">
+            <StyledButton>Skip</StyledButton>
+          </Link>
+        </SwiperSlide>
+        <SwiperSlide>
+          {" "}
+          <img src={Animal} alt="  " />
+          <Heading title={"My Pets"} size="20" weight="900" as="h1" />
+          <StyledP>
+            Taking care of a pet is my favorite, it helps me to gamir stress and
+            fatiuge
+          </StyledP>
+          <StyledP>2/4 </StyledP>
+          <div className="Flex Center margin-bottom">
+            <img className="Oval" src={Oval} alt="  " />
+            <img src={Rectangle} alt="  " />
+            <img className="Oval" src={Oval} alt="  " />
+            <img className="Oval" src={Oval} alt="  " />
+          </div>
+          <Link to="/List">
+            <StyledButton>Skip</StyledButton>
+          </Link>
+        </SwiperSlide>
+        <SwiperSlide>
+          {" "}
+          <img src={Animal} alt="  " />
+          <Heading title={"My Pets"} size="20" weight="900" as="h1" />
+          <StyledP>
+            Taking care of a pet is my favorite, it helps me to gamir stress and
+            fatiuge
+          </StyledP>
+          <StyledP>3/4 </StyledP>
+          <div className="Flex Center margin-bottom">
+            <img className="Oval" src={Oval} alt="  " />
+            <img className="Oval" src={Oval} alt="  " />
+            <img src={Rectangle} alt="  " />
+            <img className="Oval" src={Oval} alt="  " />
+          </div>
+          <Link to="/List">
+            <StyledButton>Skip</StyledButton>
+          </Link>
+        </SwiperSlide>
+        <SwiperSlide>
+          {" "}
+          <img src={Animal} alt="  " />
+          <Heading title={"My Pets"} size="20" weight="900" as="h1" />
+          <StyledP>
+            Taking care of a pet is my favorite, it helps me to gamir stress and
+            fatiuge
+          </StyledP>
+          <StyledP>4/4 </StyledP>
+          <div className="Flex Center margin-bottom">
+            <img className="Oval" src={Oval} alt="  " />
+            <img className="Oval" src={Oval} alt="  " />
+            <img className="Oval" src={Oval} alt="  " />
+            <img src={Rectangle} alt="  " />
+          </div>
+          <Link to="/List">
+            <StyledButton>Skip</StyledButton>
+          </Link>
+        </SwiperSlide>
+      </Swiper>
     </>
   );
 };
