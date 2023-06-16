@@ -9,6 +9,15 @@ import City from "../components/City";
 import AnimalCard from "../templates/AnimalCard";
 import NavMenu from "../templates/NavMenu";
 
+const StyledButton = styled.button`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #e0e0e0;
+  box-shadow: 17px 17px 43px #868686, -17px -17px 43px #ffffff;
+`;
+
 const StyledImg = styled.img`
   height: 40px;
   width: 40px;
@@ -16,10 +25,13 @@ const StyledImg = styled.img`
 `;
 
 const StyledProfilCircle = styled.div`
-  height: 43px;
-  width: 45px;
+  height: 45px;
+  width: 46px;
   border-radius: 20px;
   background-color: #f5f5fa;
+  border: none;
+  background: #e0e0e0;
+  box-shadow: 17px 17px 43px #868686, -17px -17px 43px #ffffff;
 `;
 
 const StyledNav = styled.nav`
@@ -52,7 +64,9 @@ const ListView = () => {
           <City></City>
           <StyledMdKeyboardArrowDown />
         </div>
-        <StyledSlBell />
+        <StyledButton>
+          <StyledSlBell />
+        </StyledButton>
       </div>
       <StyledNav>
         <FilterButton title={"Cats"}></FilterButton>
@@ -60,17 +74,9 @@ const ListView = () => {
         <FilterButton title={"Birds"}></FilterButton>
         <FilterButton title={"Other"}></FilterButton>
       </StyledNav>
-      <Link to="/detailsview"></Link>
       <AnimalCard></AnimalCard>
 
-      <br />
-      <br />
-      <br />
-      <br />
       <NavMenu></NavMenu>
-      <Link to="/">
-        <button>skip</button>
-      </Link>
     </>
   );
 };
