@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Heading from "../components/Heading";
 import City from "../components/City";
 import PetPicture from "../assets/PetPicture.png";
+import defaultAvatar from "../assets/DefaultAvatar.png";
 import { TbMapPin } from "react-icons/Tb";
 import { AiOutlineHeart } from "react-icons/Ai";
 import useAxios from "../useAxios";
@@ -10,6 +11,11 @@ import { Link, useOutletContext } from "react-router-dom";
 const StyledAiOutlineHeart = styled(AiOutlineHeart)`
   margin-right: 10px;
 `;
+
+const StyledP = styled.p`
+  font-size: 15px;
+`;
+
 const StyledDiv = styled.div`
   height: 30px;
   width: 180px;
@@ -33,10 +39,12 @@ const StyledArticle = styled.article`
 const StyledImg = styled.img`
   width: 124px;
   height: 124px;
+  border-radius: 25px;
+  margin-right: 5px;
 `;
 
 const AnimalCard = () => {
-  const [data, error, loading] = useAxios("animals");
+  const [data, error, loading] = useAxios("id");
   return (
     <>
       {error && <p>Der opstod en fejl...</p>}
@@ -45,17 +53,24 @@ const AnimalCard = () => {
         <>
           {console.log(data)}
           {data.animals.map((animal) => (
-            <Link to={`detailview/${animal.id}`} key={animal.id}>
+            <Link to={`/detailview/${animal.id}`} key={animal.id}>
               <StyledArticle>
                 <div className="Flex Center flex-start">
-                  <StyledImg src={PetPicture} alt="" />
+                  <StyledImg
+                    src={
+                      animal.photos.length > 0
+                        ? animal.photos[0].full
+                        : defaultAvatar
+                    }
+                    alt=""
+                  />
                   <div>
                     <StyledDiv className="Flex Center space-between align-start">
                       <Heading
                         className="flex-start"
                         title={
-                          animal.name > 3
-                            ? animal.name.slice(0, 3).join(" ") + "..."
+                          animal.name.length > 5
+                            ? animal.name.split(" ").slice(0, 3).join(" ")
                             : animal.name
                         }
                         size="20"
@@ -68,9 +83,11 @@ const AnimalCard = () => {
                       <StyledTbMapPin />
                       <p>{animal.contact.address.city}</p>
                     </StyledDiv>
-                    <p className="text-align-start">
-                      {animal.size} {animal.species}
-                    </p>
+                    <div className="text-align-start">
+                      <p>
+                        {animal.size} {animal.gender} {animal.species}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </StyledArticle>
