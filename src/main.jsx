@@ -4,6 +4,7 @@ import App from "./App";
 import Tutorial from "./pages/Tutorial";
 import ListView from "./pages/Listview";
 import DetailsView from "./pages/DetailsView";
+import ErrorView from "./pages/ErrorView";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -13,7 +14,7 @@ import {
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<App />}>
+    <Route path="/" element={<App />} errorElement={<ErrorView />}>
       <Route index element={<Tutorial />} />
       <Route path="/list/" element={<ListView />} />
       <Route path="/detailview/:id" /*:id */ element={<DetailsView />} />
