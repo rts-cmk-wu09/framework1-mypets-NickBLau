@@ -53,7 +53,7 @@ const StyledImg = styled.img`
 
 const AnimalCard = () => {
   const [data, error, loading] = useAxios();
-  const [isClick, setClick] = useState(false);
+  const [liked, SetLiked] = useState(false);
   return (
     <>
       {error && <p>Der opstod en fejl...</p>}
@@ -99,12 +99,7 @@ const AnimalCard = () => {
                   </div>
                 </div>
               </Link>
-              {
-                <StyledAiOutlineHeart
-                  isClick={isClick}
-                  onClick={() => setClick(!isClick)}
-                />
-              }
+              {<StyledAiOutlineHeart />}
             </StyledArticle>
           ))}
         </>

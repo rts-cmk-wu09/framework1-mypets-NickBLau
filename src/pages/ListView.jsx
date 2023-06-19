@@ -55,28 +55,30 @@ const StyledMdKeyboardArrowDown = styled(MdKeyboardArrowDown)`
 const ListView = () => {
   return (
     <>
-      <div className="Flex Center space-between">
-        <div className=" Flex Center space-around">
-          <StyledProfilCircle>
-            <StyledImg src={Profilepic} alt="  " />
-          </StyledProfilCircle>
-          <StyledTbMapPinFilled />
-          <City></City>
-          <StyledMdKeyboardArrowDown />
+      <div className="padding">
+        <div className="Flex Center space-between">
+          <div className=" Flex Center space-around">
+            <StyledProfilCircle>
+              <StyledImg src={Profilepic} alt="  " />
+            </StyledProfilCircle>
+            <StyledTbMapPinFilled />
+            <p>New york city</p>
+            <StyledMdKeyboardArrowDown />
+          </div>
+          <StyledButton>
+            <StyledSlBell />
+          </StyledButton>
         </div>
-        <StyledButton>
-          <StyledSlBell />
-        </StyledButton>
-      </div>
-      <StyledNav>
-        <FilterButton title={"Cats"}></FilterButton>
-        <FilterButton title={"Dogs"}></FilterButton>
-        <FilterButton title={"Birds"}></FilterButton>
-        <FilterButton title={"Other"}></FilterButton>
-      </StyledNav>
-      <AnimalCard></AnimalCard>
+        <StyledNav>
+          <FilterButton title={"Cats"}></FilterButton>
+          <FilterButton title={"Dogs"}></FilterButton>
+          <FilterButton title={"Birds"}></FilterButton>
+          <FilterButton title={"Other"}></FilterButton>
+        </StyledNav>
+        <AnimalCard></AnimalCard>
 
-      <NavMenu></NavMenu>
+        <NavMenu></NavMenu>
+      </div>
     </>
   );
 };
