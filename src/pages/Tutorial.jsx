@@ -104,7 +104,7 @@ const Tutorial = () => {
             <img src={Rectangle} alt="  " />
           </div>
           <Link to="/List">
-            <StyledButton>Skip</StyledButton>
+            <StyledButton>Got it</StyledButton>
           </Link>
         </SwiperSlide>
       </Swiper>
