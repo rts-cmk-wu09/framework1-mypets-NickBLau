@@ -6,10 +6,12 @@ import defaultAvatar from "../assets/DefaultAvatar.png";
 import { TbMapPin } from "react-icons/Tb";
 import { AiOutlineHeart } from "react-icons/Ai";
 import useAxios from "../useAxios";
+import React, { useState } from "react";
 import { Link, useOutletContext } from "react-router-dom";
 
 const StyledAiOutlineHeart = styled(AiOutlineHeart)`
-  margin-right: 10px;
+  grid-column-start: 3;
+  margin-top: 12px;
 `;
 
 const StyledP = styled.p`
@@ -18,7 +20,9 @@ const StyledP = styled.p`
 
 const StyledDiv = styled.div`
   height: 30px;
-  width: 180px;
+  width: 150px;
+  grid-column-start: 2;
+  grid-column-end: 3;
 `;
 
 const StyledTbMapPin = styled(TbMapPin)`
@@ -34,17 +38,22 @@ const StyledArticle = styled.article`
   background-color: #f5f5fa;
   border-radius: 20px;
   box-shadow: 20px 20px 40px #bebebe, -20px -20px 40px #ffffff;
+  display: grid;
+  grid-template-columns: 124px 1fr 45px;
 `;
 
 const StyledImg = styled.img`
-  width: 124px;
+  min-width: 124px;
   height: 124px;
   border-radius: 25px;
   margin-right: 5px;
+  grid-column-start: 1;
+  grid-column-end: 2;
 `;
 
 const AnimalCard = () => {
-  const [data, error, loading] = useAxios("id");
+  const [data, error, loading] = useAxios();
+  const [isClick, setClick] = useState(false);
   return (
     <>
       {error && <p>Der opstod en fejl...</p>}
@@ -53,8 +62,8 @@ const AnimalCard = () => {
         <>
           {console.log(data)}
           {data.animals.map((animal) => (
-            <Link to={`/detailview/${animal.id}`} key={animal.id}>
-              <StyledArticle>
+            <StyledArticle>
+              <Link to={`/detailview/${animal.id}`} key={animal.id}>
                 <div className="Flex Center flex-start">
                   <StyledImg
                     src={
@@ -65,9 +74,9 @@ const AnimalCard = () => {
                     alt=""
                   />
                   <div>
-                    <StyledDiv className="Flex Center space-between align-start">
+                    <StyledDiv className="Flex Center space-between">
                       <Heading
-                        className="flex-start"
+                        className="text-align-start "
                         title={
                           animal.name.length > 5
                             ? animal.name.split(" ").slice(0, 3).join(" ")
@@ -77,7 +86,6 @@ const AnimalCard = () => {
                         weight="900"
                         as="h2"
                       ></Heading>
-                      <StyledAiOutlineHeart className="postion-end margin-left" />
                     </StyledDiv>
                     <StyledDiv className="Flex Center flex-start">
                       <StyledTbMapPin />
@@ -90,8 +98,14 @@ const AnimalCard = () => {
                     </div>
                   </div>
                 </div>
-              </StyledArticle>
-            </Link>
+              </Link>
+              {
+                <StyledAiOutlineHeart
+                  isClick={isClick}
+                  onClick={() => setClick(!isClick)}
+                />
+              }
+            </StyledArticle>
           ))}
         </>
       )}
