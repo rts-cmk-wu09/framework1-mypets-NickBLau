@@ -6,7 +6,7 @@ import defaultAvatar from "../assets/DefaultAvatar.png";
 import { TbMapPin } from "react-icons/Tb";
 import { AiOutlineHeart } from "react-icons/Ai";
 import useAxios from "../useAxios";
-import React, { useState } from "react";
+import FavButton from "../components/FavoriteButton";
 import { Link, useOutletContext } from "react-router-dom";
 
 const StyledAiOutlineHeart = styled(AiOutlineHeart)`
@@ -53,7 +53,6 @@ const StyledImg = styled.img`
 
 const AnimalCard = () => {
   const [data, error, loading] = useAxios();
-  const [liked, SetLiked] = useState(false);
   return (
     <>
       {error && <p>Der opstod en fejl...</p>}
@@ -62,7 +61,7 @@ const AnimalCard = () => {
         <>
           {console.log(data)}
           {data.animals.map((animal) => (
-            <StyledArticle>
+            <StyledArticle key={animal.id}>
               <Link to={`/detailview/${animal.id}`} key={animal.id}>
                 <div className="Flex Center flex-start">
                   <StyledImg
@@ -99,7 +98,8 @@ const AnimalCard = () => {
                   </div>
                 </div>
               </Link>
-              {<StyledAiOutlineHeart />}
+              <FavButton />
+              {/* {<StyledAiOutlineHeart />} */}
             </StyledArticle>
           ))}
         </>
