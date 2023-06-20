@@ -21,6 +21,7 @@ const StyledButton = styled.button`
   background-color: #57419d;
   color: #ffffff;
   box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  cursor: pointer;
 `;
 const Tutorial = () => {
   return (
@@ -31,7 +32,7 @@ const Tutorial = () => {
         onSlideChange={() => ""}
         onSwiper={(swiper) => ""}
       >
-        <SwiperSlide>
+        <SwiperSlide className="Grab">
           {" "}
           <img src={Animal} alt="  " />
           <Heading title={"My Pets"} size="20" weight="900" as="h1" />
@@ -50,7 +51,7 @@ const Tutorial = () => {
             <StyledButton>Skip</StyledButton>
           </Link>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="Grab">
           {" "}
           <img src={Animal} alt="  " />
           <Heading title={"My Pets"} size="20" weight="900" as="h1" />
@@ -69,7 +70,7 @@ const Tutorial = () => {
             <StyledButton>Skip</StyledButton>
           </Link>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="Grab">
           {" "}
           <img src={Animal} alt="  " />
           <Heading title={"My Pets"} size="20" weight="900" as="h1" />
@@ -88,7 +89,7 @@ const Tutorial = () => {
             <StyledButton>Skip</StyledButton>
           </Link>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="Grab">
           {" "}
           <img src={Animal} alt="  " />
           <Heading title={"My Pets"} size="20" weight="900" as="h1" />
