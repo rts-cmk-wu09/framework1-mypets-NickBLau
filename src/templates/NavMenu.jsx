@@ -5,9 +5,11 @@ import { BsHouseDoor } from "react-icons/Bs";
 import { BsChat } from "react-icons/Bs";
 import { BsPerson } from "react-icons/Bs";
 import { AiOutlineHeart } from "react-icons/Ai";
+import { Link } from "react-router-dom";
 
 const StyledBsHouseDoor = styled(BsHouseDoor)`
   color: #57419d;
+  cursor: pointer;
 `;
 const StyledButton = styled.button`
   width: 40px;
@@ -41,9 +43,11 @@ const StyledNav = styled.nav`
 const navMenu = () => {
   return (
     <StyledNav className="Flex Center">
-      <StyledButton>
-        <StyledBsHouseDoor />
-      </StyledButton>
+      <Link to="/">
+        <StyledButton>
+          <StyledBsHouseDoor />
+        </StyledButton>
+      </Link>
       <StyledButton>
         <BsChat />
       </StyledButton>
