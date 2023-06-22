@@ -36,12 +36,12 @@ const StyledDiv = styled.div`
 const StyledTypes = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 20px;
-  gap: 25px;
+  margin-left: 15px;
+  gap: 20px;
 `;
 
 const StyledText = styled.p`
-  margin-left: 20px;
+  margin-left: 15px;
   width: 340px;
   text-align: left;
 `;
@@ -50,7 +50,7 @@ const StyledHeader = styled.header`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: 20px;
+  margin-left: 15px;
 `;
 
 const StyledBackgroundButton = styled.button`
@@ -74,11 +74,12 @@ const StyledAnimalBackgroundButton = styled.button`
 const StyledAnimalButtons = styled.div`
   display: flex;
   gap: 10px;
+  margin-left: 15px;
   margin-bottom: 30px;
 `;
 
 const StyledImg = styled.img`
-  width: 320px;
+  width: 90vw;
   height: 320px;
   display: flex;
   margin: auto;
@@ -97,7 +98,7 @@ const StyledAnimalImg = styled.img`
 
 const StyledButton = styled.button`
   height: 44px;
-  width: 327px;
+  width: 90vw;
   border-radius: 50px;
   border: none;
   background-color: #57419d;
@@ -114,7 +115,7 @@ const DetailsView = ({}) => {
       {data && (
         <>
           <StyledArticle key="id">
-            <div className="Flex flex-end">
+            <div className="Flex">
               <StyledImg
                 src={
                   data.animal.photos.length > 0
@@ -132,21 +133,25 @@ const DetailsView = ({}) => {
                   weight="900"
                   as="h2"
                 ></Heading>
-                <p className="align-start ">
-                  <StyledTbMapPin></StyledTbMapPin>
-                  {data && data.animal.contact.address.city}
-                </p>
+                <div className="Flex margin-right">
+                  <p className="margin-right-xs">
+                    <StyledTbMapPin></StyledTbMapPin>
+                  </p>
+                  <p>{data && data.animal.contact.address.city}</p>
+                </div>
               </StyledHeader>
 
               <StyledTypes>
-                <div className="Flex">
-                  <StyledBackgroundButton className="margin-right">
+                <div className="Flex Center">
+                  <StyledBackgroundButton className="margin-right-s">
                     <StyledPaw />
                   </StyledBackgroundButton>
-                  <p>{data && data.animal.breeds.primary} </p>
+                  <p className="max-width">
+                    {data && data.animal.breeds.primary}{" "}
+                  </p>
                 </div>
-                <div className="Flex">
-                  <StyledBackgroundButton className="margin-right">
+                <div className="Flex Center">
+                  <StyledBackgroundButton className="margin-right-s">
                     <StyledGender />
                   </StyledBackgroundButton>
                   <p>{data && data.animal.gender} </p>
